@@ -3,6 +3,9 @@ import Foundation
 // Publishes any new numbers that it receives notifications for
 class Receiver: ObservableObject {
   @Published var number: Int = 0
+    init() {
+        registerForNotification()
+    }
 }
 
 extension Receiver {
