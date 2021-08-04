@@ -27,12 +27,14 @@ extension MainView {
       let numbers = AsyncStream(Int.self) { continuation in // Building a stream of Ints
           self.isRunning = true
           
-          // Runs on a separate thread, detached
-          Task.detached {
+          // Runs on main thread, the numbers are generated, but they can't be picked up outside the task
+          Task {
               while self.isRunning {
                   sleep(1)
                   // Put the result outside the task, so the "for await" can "hear" it
-                  continuation.yield(Int.random(in: 1...99))
+                  let number = Int.random(in: 1...99)
+                  print(number)
+                  continuation.yield(number)
               }
           }
           
