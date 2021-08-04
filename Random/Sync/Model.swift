@@ -1,5 +1,5 @@
 class Model {
-  private(set) var numbers: [Int] = []
+  private var numbers: [Int] = []
   
   init() {
     for _ in 1...5 {
@@ -7,4 +7,10 @@ class Model {
       numbers.append(number)
     }
   }
+}
+
+extension Model: Sequence {
+    func makeIterator() -> IndexingIterator<[Int]> {
+        numbers.makeIterator()
+    }
 }
