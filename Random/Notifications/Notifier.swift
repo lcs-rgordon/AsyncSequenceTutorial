@@ -1,5 +1,6 @@
 import Foundation
 
+// Generates and posts a random number
 let randomNumberNotification = Notification.Name("randomNumberNotification")
 
 class Notifier {
