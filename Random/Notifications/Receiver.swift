@@ -25,10 +25,6 @@ extension Receiver {
             .map(\.number) // Stream of Int
         
         for await number in numbers {
-            if number.isMultiple(of: 2) {
-                print(number)
-                continue
-            }
             // Get the number provided by the notification
             self.number = number
         }
