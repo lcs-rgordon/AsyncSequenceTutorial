@@ -2,7 +2,7 @@ import SwiftUI
 
 struct MainView {
   @State private var value: String = ""
-  private let model = Model()
+  private let numbers = Model()
     
 }
 
@@ -20,7 +20,7 @@ extension MainView {
   private func nextNumber() {
       // Every sequence has an iterator
       // Every iterator has a single method called next()
-      var iterator = model.numbers.makeIterator()
+      var iterator = numbers.makeIterator()
       while let number = iterator.next() {
           print(number.description)
       }
