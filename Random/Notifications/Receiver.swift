@@ -22,7 +22,7 @@ extension Receiver {
             .map(\.object) // Stream of Any?
             .map{object in object as? Notifier} // Stream of Notifier?
             .filter{ notifier in notifier != nil} // Stream of non-nil Notifier?
-            .map(nonNilNotifier in nonNilNotifier!) // Stream of Notifer
+            .map{nonNilNotifier in nonNilNotifier!} // Stream of Notifer
         
         // The new way
         // We'd like to do this
