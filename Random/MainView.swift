@@ -2,8 +2,8 @@ import SwiftUI
 
 struct MainView {
   @State private var value: String = ""
-    private let numbers = Model().makeIterator()
-    
+  // Allows notifications to be posted
+  private let notifier = Notifier()
 }
 
 extension MainView: View {
@@ -18,11 +18,7 @@ extension MainView: View {
 
 extension MainView {
   private func nextNumber() {
-      if let number = numbers.next() {
-          value = number.description
-      } else {
-          value = "No more values"
-      }
+      notifier.postRandomNumber()
   }
 }
 
