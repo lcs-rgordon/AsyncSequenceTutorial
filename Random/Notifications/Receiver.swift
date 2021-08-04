@@ -11,6 +11,7 @@ class Receiver: ObservableObject {
 }
 
 extension Receiver {
+    @MainActor
     func registerForNotification() async {
         
         let notifications = NotificationCenter.default.notifications(named: randomNumberNotification, object: nil) // By passing nil, we are not filtering by object type
