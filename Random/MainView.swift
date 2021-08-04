@@ -18,16 +18,9 @@ extension MainView: View {
 
 extension MainView {
   private func nextNumber() {
-      // Every sequence has an iterator
-      // Every iterator has a single method called next()
-      var iterator = numbers.makeIterator()
-      while let number = iterator.next() {
+      for number in numbers {
           print(number.description)
       }
-      // This is equivalent to the lines above
-//      for number in model.numbers {
-//          print(number.description)
-//      }
   }
 }
 
