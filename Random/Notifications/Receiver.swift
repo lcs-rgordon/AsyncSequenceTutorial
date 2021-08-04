@@ -13,7 +13,7 @@ class Receiver: ObservableObject {
 extension Receiver {
     func registerForNotification() async {
         
-        let notifications = NotificationCenter.default.notifications(named: randomNumberNotification, object: nil)
+        let notifications = NotificationCenter.default.notifications(named: randomNumberNotification, object: nil) // By passing nil, we are not filtering by object type
         
         // The new way
         // We'd like to do this
