@@ -34,6 +34,10 @@ extension MainView {
                   // Put the result outside the task, so the "for await" can "hear" it
                   let number = Int.random(in: 1...99)
                   print(number)
+                  if number.isMultiple(of: 10) {
+                      self.isRunning = false
+                      continuation.finish()
+                  }
                   continuation.yield(number)
               }
           }
