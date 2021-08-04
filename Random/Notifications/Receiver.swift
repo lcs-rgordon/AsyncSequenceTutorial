@@ -24,9 +24,11 @@ extension Receiver {
             }   // Stream of Notifier that are non-nil
             .map(\.number) // Stream of Int
         
-        // The new way
-        // We'd like to do this
         for await number in numbers {
+            if number.isMultiple(of: 2) {
+                print(number)
+                continue
+            }
             // Get the number provided by the notification
             self.number = number
         }
