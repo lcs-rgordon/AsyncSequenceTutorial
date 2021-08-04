@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		623C142026B9D86A00141264 /* RandomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C141F26B9D86A00141264 /* RandomApp.swift */; };
-		623C142226B9D86A00141264 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C142126B9D86A00141264 /* ContentView.swift */; };
+		623C142226B9D86A00141264 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C142126B9D86A00141264 /* MainView.swift */; };
 		623C142426B9D86C00141264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 623C142326B9D86C00141264 /* Assets.xcassets */; };
 		623C142726B9D86C00141264 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 623C142626B9D86C00141264 /* Preview Assets.xcassets */; };
+		623C143226B9DA2800141264 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C143126B9DA2800141264 /* Notifier.swift */; };
+		623C143426B9DA6700141264 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C143326B9DA6700141264 /* Model.swift */; };
+		623C143626B9DAAF00141264 /* ModelIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C143526B9DAAF00141264 /* ModelIterator.swift */; };
+		623C143826B9DB6B00141264 /* AsyncModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C143726B9DB6B00141264 /* AsyncModel.swift */; };
+		623C143A26B9DB8500141264 /* AsyncModelIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C143926B9DB8500141264 /* AsyncModelIterator.swift */; };
+		623C144626BA1D7700141264 /* Receiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C144526BA1D7700141264 /* Receiver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		623C141C26B9D86A00141264 /* Random.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		623C141F26B9D86A00141264 /* RandomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomApp.swift; sourceTree = "<group>"; };
-		623C142126B9D86A00141264 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		623C142126B9D86A00141264 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		623C142326B9D86C00141264 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		623C142626B9D86C00141264 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		623C143126B9DA2800141264 /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
+		623C143326B9DA6700141264 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		623C143526B9DAAF00141264 /* ModelIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelIterator.swift; sourceTree = "<group>"; };
+		623C143726B9DB6B00141264 /* AsyncModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncModel.swift; sourceTree = "<group>"; };
+		623C143926B9DB8500141264 /* AsyncModelIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncModelIterator.swift; sourceTree = "<group>"; };
+		623C144526BA1D7700141264 /* Receiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receiver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +63,12 @@
 		623C141E26B9D86A00141264 /* Random */ = {
 			isa = PBXGroup;
 			children = (
+				623C142126B9D86A00141264 /* MainView.swift */,
+				623C142E26B9D93700141264 /* Sync */,
+				623C143026B9D95300141264 /* Notifications */,
+				623C142F26B9D94900141264 /* Async */,
+				623C142D26B9D90800141264 /* Support */,
 				623C141F26B9D86A00141264 /* RandomApp.swift */,
-				623C142126B9D86A00141264 /* ContentView.swift */,
-				623C142326B9D86C00141264 /* Assets.xcassets */,
-				623C142526B9D86C00141264 /* Preview Content */,
 			);
 			path = Random;
 			sourceTree = "<group>";
@@ -65,6 +79,42 @@
 				623C142626B9D86C00141264 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		623C142D26B9D90800141264 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				623C142326B9D86C00141264 /* Assets.xcassets */,
+				623C142526B9D86C00141264 /* Preview Content */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		623C142E26B9D93700141264 /* Sync */ = {
+			isa = PBXGroup;
+			children = (
+				623C143326B9DA6700141264 /* Model.swift */,
+				623C143526B9DAAF00141264 /* ModelIterator.swift */,
+			);
+			path = Sync;
+			sourceTree = "<group>";
+		};
+		623C142F26B9D94900141264 /* Async */ = {
+			isa = PBXGroup;
+			children = (
+				623C143726B9DB6B00141264 /* AsyncModel.swift */,
+				623C143926B9DB8500141264 /* AsyncModelIterator.swift */,
+			);
+			path = Async;
+			sourceTree = "<group>";
+		};
+		623C143026B9D95300141264 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				623C143126B9DA2800141264 /* Notifier.swift */,
+				623C144526BA1D7700141264 /* Receiver.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +187,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				623C142226B9D86A00141264 /* ContentView.swift in Sources */,
+				623C143826B9DB6B00141264 /* AsyncModel.swift in Sources */,
+				623C143626B9DAAF00141264 /* ModelIterator.swift in Sources */,
+				623C142226B9D86A00141264 /* MainView.swift in Sources */,
+				623C143226B9DA2800141264 /* Notifier.swift in Sources */,
+				623C143A26B9DB8500141264 /* AsyncModelIterator.swift in Sources */,
 				623C142026B9D86A00141264 /* RandomApp.swift in Sources */,
+				623C144626BA1D7700141264 /* Receiver.swift in Sources */,
+				623C143426B9DA6700141264 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +324,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Random/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Random/Support/Preview Content\"";
 				DEVELOPMENT_TEAM = MG5SW9CY8D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -277,7 +333,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,7 +354,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Random/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Random/Support/Preview Content\"";
 				DEVELOPMENT_TEAM = MG5SW9CY8D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -307,7 +363,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
