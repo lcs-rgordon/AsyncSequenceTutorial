@@ -14,7 +14,15 @@ class Receiver: ObservableObject {
 extension Receiver {
     func registerForNotification() async {
         
-        let notifications = NotificationCenter.default.notifications(named: randomNumberNotification, object: nil) // By passing nil, we are not filtering by object type
+        // By passing nil, we are not filtering by object type
+        // Receiving a stream of notifications from randomNumberNotification
+        // Transforming a stream of Any? into a Notifier object
+        let notifications = NotificationCenter.default.notifications(named: randomNumberNotification,
+                                                                     object: nil) // Stream of notifications
+            .map(\.object) // Stream of Any?
+            .map{object in object as? Notifier} // Stream of Notifier?
+            .filter{ notifier in notifier != nil} // Stream of non-nil Notifier?
+            .map(nonNilNotifier in nonNilNotifier!) // Stream of Notifer
         
         // The new way
         // We'd like to do this
@@ -24,20 +32,6 @@ extension Receiver {
                 self.number = object.number
             }
         }
-        
-//        // The old way
-//        NotificationCenter.default.addObserver(forName: randomNumberNotification,
-//                                               object: nil,
-//                                               queue: nil) { notification in
-//
-//            // What do we want to do with the notification?
-//            // Make sure we have a Notifier object
-//            // If not, just ignore the notification
-//            if let object = notification.object as? Notifier {
-//                // Get the number provided by the notification
-//                self.number = object.number
-//            }
-//        }
         
     }
 }
