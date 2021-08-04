@@ -2,7 +2,7 @@ import SwiftUI
 
 struct MainView {
   @State private var value: String = ""
-  private let numbers = Model()
+    private let numbers = Model().makeIterator()
     
 }
 
@@ -18,8 +18,10 @@ extension MainView: View {
 
 extension MainView {
   private func nextNumber() {
-      for number in numbers {
-          print(number.description)
+      if let number = numbers.next() {
+          value = number.description
+      } else {
+          value = "No more values"
       }
   }
 }
