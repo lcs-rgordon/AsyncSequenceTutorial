@@ -17,20 +17,18 @@ extension Receiver {
         // By passing nil, we are not filtering by object type
         // Receiving a stream of notifications from randomNumberNotification
         // Transforming a stream of Any? into a Notifier object
-        let notifications = NotificationCenter.default.notifications(named: randomNumberNotification,
+        let numbers = NotificationCenter.default.notifications(named: randomNumberNotification,
                                                                      object: nil) // Stream of notifications
-            .map(\.object) // Stream of Any?
-            .map{object in object as? Notifier} // Stream of Notifier?
-            .filter{ notifier in notifier != nil} // Stream of non-nil Notifier?
-            .map{nonNilNotifier in nonNilNotifier!} // Stream of Notifer
+            .compactMap { notification in
+                notification.object as? Notifier
+            }   // Stream of Notifier that are non-nil
+            .map(\.number) // Stream of Int
         
         // The new way
         // We'd like to do this
-        for await notification in notifications {
-            if let object = notification.object as? Notifier {
-                // Get the number provided by the notification
-                self.number = object.number
-            }
+        for await number in numbers {
+            // Get the number provided by the notification
+            self.number = number
         }
         
     }
