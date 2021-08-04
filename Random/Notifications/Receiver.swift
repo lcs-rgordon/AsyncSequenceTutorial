@@ -1,6 +1,7 @@
 import Foundation
 
 // Publishes any new numbers that it receives notifications for
+@MainActor
 class Receiver: ObservableObject {
   @Published var number: Int = 0
     init() {
@@ -11,7 +12,6 @@ class Receiver: ObservableObject {
 }
 
 extension Receiver {
-    @MainActor
     func registerForNotification() async {
         
         let notifications = NotificationCenter.default.notifications(named: randomNumberNotification, object: nil) // By passing nil, we are not filtering by object type
