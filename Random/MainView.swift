@@ -28,7 +28,7 @@ extension MainView {
           self.isRunning = true
           
           // Runs on main thread, the numbers are generated, but they can't be picked up outside the task
-          Task {
+          Task.detached {
               while self.isRunning {
                   sleep(1)
                   // Put the result outside the task, so the "for await" can "hear" it
